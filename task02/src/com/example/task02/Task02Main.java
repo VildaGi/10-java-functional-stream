@@ -6,18 +6,21 @@ public class Task02Main {
 
     public static void main(String[] args) {
 
-        /*
+
         cycleGrayCode(2)
                 .limit(10)
-                .forEach(System.out::println);
-        */
+                .forEach(System.out::print);
+
 
     }
 
     public static IntStream cycleGrayCode(int n) {
-
-        return null; // your implementation here
-
+        if (n < 1 || n > 16)
+            throw new IllegalArgumentException();
+        int size = 1 << n; // 2^n
+        return IntStream
+                .iterate(0, x -> (x + 1) % size)
+                .map(x -> x ^ (x >> 1));
     }
 
 }
