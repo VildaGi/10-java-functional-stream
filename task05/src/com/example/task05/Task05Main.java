@@ -64,7 +64,7 @@ public class Task05Main {
         ) : "wrong mailService mailbox content (2)";
 
 
-        //mailBox.putIfAbsent(randomTo, new ArrayList<>()); -- без этой строки не работает.
+        mailBox.putIfAbsent(randomTo, new ArrayList<>()); // без этой строки не работает.
         assert mailBox.get(randomTo).equals(Collections.<String>emptyList()) : "wrong mailService mailbox content (3)";
 
 

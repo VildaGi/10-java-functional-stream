@@ -27,6 +27,7 @@ public class Task01Main {
         if (condition == null || ifTrue == null || ifFalse == null) {
             throw new NullPointerException();
         }
+
         return t -> condition.test(t) ? ifTrue.apply(t) : ifFalse.apply(t);
     }
 }

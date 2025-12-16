@@ -5,19 +5,15 @@ import java.util.stream.IntStream;
 public class Task02Main {
 
     public static void main(String[] args) {
-
-
         cycleGrayCode(2)
                 .limit(10)
                 .forEach(System.out::print);
-
-
     }
 
     public static IntStream cycleGrayCode(int n) {
         if (n < 1 || n > 16)
             throw new IllegalArgumentException();
-        int size = 1 << n; // 2^n
+        int size = 1 << n;
         return IntStream
                 .iterate(0, x -> (x + 1) % size)
                 .map(x -> x ^ (x >> 1));

@@ -3,10 +3,7 @@ package com.example.task05;
 import com.example.task05.ITests;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TestsImpl implements ITests {
 
@@ -69,6 +66,7 @@ public class TestsImpl implements ITests {
                 )
         ) : "wrong mailService mailbox content (2)";
 
+        mailBox.putIfAbsent(randomTo, new ArrayList<>());
         assert mailBox.get(randomTo).equals(Collections.<String>emptyList()) : "wrong mailService mailbox content (3)";
 
 

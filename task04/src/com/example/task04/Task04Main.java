@@ -18,6 +18,8 @@ public class Task04Main {
                 new InputStreamReader(System.in, "UTF-8"))) {
 
             String regex = "[\\s,\\.!?;:\\-()$${}'\"“”]+";
+
+
             Map<String, Long> freqMap = reader.lines()
                     .flatMap(line -> Arrays.stream(line.split(regex)))
                     .filter(s -> !s.isEmpty())
